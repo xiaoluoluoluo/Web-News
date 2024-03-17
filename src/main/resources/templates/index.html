@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>每日新闻</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 在<head>标签内添加以下JavaScript代码 -->
+    <script th:inline="javascript">
+        function showNewsContent(newsId) {
+            // 确认函数被调用
+            console.log('Clicked on news with ID: ' + newsId);
+            // 其他逻辑，比如发送Ajax请求到后端
+            window.location.href = "/view/" + newsId;
+        }
+    </script>
+
+    <style>
+        .news-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .news-item-image {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+
+        .news-item-content {
+            flex-grow: 1;
+        }
+
+        .news-item-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-decoration: none; /* 去掉下划线 */
+            color: black; /* 字体颜色设为黑色 */
+        }
+        .news-item-url {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-decoration: none; /* 去掉下划线 */
+            color: black; /* 字体颜色设为黑色 */
+        }
+        .news-item-description {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .news-item-title:hover {
+            cursor: pointer;
+            /* 其他样式，比如改变颜色或添加下划线 */
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+
+<body>
+<h1 style="text-align: center">每日新闻</h1>
+<div th:each="news : ${newsList}" class="news-item">
+    <img th:src="${news.imageurl}" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" th:text="${news.title}" th:onclick="'showNewsContent(\'' + ${news.id} + '\')'"></div>
+        <div class="news-item-description" th:text="${news.description}"></div>
+    </div>
+</div>
+</body>
+
+</html>
+

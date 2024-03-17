@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${news.title}"></title>
+</head>
+
+<body>
+    <div th:utext="${news.context}"></div>
+    <span th:text="${news.annex != null ? '附件: ' : ''}">作者：</span>
+    <a th:href="${news.annex}" th:text="${news.annex != null ? news.annex.substring(news.annex.lastIndexOf('/') + 1) : ''}">Link</a>
+    <div style="text-align: right">
+        <span>作者：</span>
+        <span th:utext="${news.editor}"></span>
+        <br>
+        <span>发布日期：</span>
+        <span th:utext="${news.publishTime}"></span>
+    </div>
+</body>
+</html>

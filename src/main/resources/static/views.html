@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>每日新闻</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 在<head>标签内添加以下JavaScript代码 -->
+    <script>
+        function showNewsContent(newsId) {
+            // 确认函数被调用
+            console.log('Clicked on news with ID: ' + newsId);
+            // 其他逻辑，比如发送Ajax请求到后端
+            window.location.href = "/view/" + newsId;
+        }
+    </script>
+
+    <style>
+        .news-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .news-item-image {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+
+        .news-item-content {
+            flex-grow: 1;
+        }
+
+        .news-item-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-decoration: none; /* 去掉下划线 */
+            color: black; /* 字体颜色设为黑色 */
+        }
+        .news-item-url {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-decoration: none; /* 去掉下划线 */
+            color: black; /* 字体颜色设为黑色 */
+        }
+        .news-item-description {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .news-item-title:hover {
+            cursor: pointer;
+            /* 其他样式，比如改变颜色或添加下划线 */
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+
+<body>
+<h1 style="text-align: center">每日新闻</h1>
+<div class="news-item">
+    <img src="https://p2.img.cctvpic.com/photoworkspace/2023/12/29/2023122920253772606.jpg" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" onclick="showNewsContent(&#39;2&#39;)">特写：瑞士边城中医诊所的一个接诊日</div>
+        <div class="news-item-description">瑞士华人中医师贾克杰天色未明便走出家门，她的诊所这天有14个预约患者。中医诊所TCM-City是瑞士边境城市沙夫豪森的七家中医诊所之一，成立于2002年，设在一栋老楼二层，TCM-City以及另外两家西医诊所的标牌从上向下依次嵌.</div>
+    </div>
+</div>
+<div class="news-item">
+    <img src="https://p2.img.cctvpic.com/photoworkspace/2023/12/28/2023122817492598307.jpg" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" onclick="showNewsContent(&#39;3&#39;)">45个时光片段穿梭改革开放45年之多姿生活</div>
+        <div class="news-item-description">从黑白电视机，到VR全息影像；从电视主导的大众文化，到网络娱乐遍地生花；从单调的精神生活，到文化自信全面增强……改革开放45年里，路变宽了，楼变高了，而我们的文化娱乐生活也发生着翻天覆地的变化。</div>
+    </div>
+</div>
+<div class="news-item">
+    <img src="https://luo-web.oss-cn-hangzhou.aliyuncs.com/89396291-0fad-4cb2-8ab3-56da50fd3f03.jpg" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" onclick="showNewsContent(&#39;13&#39;)">韩方称朝鲜发射200多发海岸炮，外交部：正密切关注形势发展</div>
+        <div class="news-item-description">有记者提问，法新社记者提问，韩方称朝鲜今天向半岛西部海域发射了200多发海岸炮，韩国延坪岛、白翎岛向居民下达躲避令。中方对此有何评论？</div>
+    </div>
+</div>
+<div class="news-item">
+    <img src="https://luo-web.oss-cn-hangzhou.aliyuncs.com/f9d6df4c-b0ce-4517-b46c-7002cf15e09b.jpg" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" onclick="showNewsContent(&#39;14&#39;)">足协连放大招，能否拯救中国足球？</div>
+        <div class="news-item-description">无论是调整外援政策，还是开放球队冠名以及重启俱乐部异地迁移，都指向了一个方向——先活着。</div>
+    </div>
+</div>
+<div class="news-item">
+    <img src="https://luo-web.oss-cn-hangzhou.aliyuncs.com/c680582d-b82a-46c4-b74a-443953a576aa.jpg" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" onclick="showNewsContent(&#39;15&#39;)">约基奇超远三分绝杀库里30分 掘金逆转胜勇士</div>
+        <div class="news-item-description">北京时间1月5日，NBA常规赛，掘金130-127逆转险胜勇士。</div>
+    </div>
+</div>
+<div class="news-item">
+    <img src="https://luo-web.oss-cn-hangzhou.aliyuncs.com/eebebd89-71e7-4477-aed6-85328a6a6eda.jpg" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" onclick="showNewsContent(&#39;16&#39;)">西甲-魔笛助攻吕迪格破门 皇马1-0马略卡取4连胜</div>
+        <div class="news-item-description">1月4日，西甲第19轮，皇马主场1-0战胜马略卡，取得联赛四连胜。</div>
+    </div>
+</div>
+<div class="news-item">
+    <img src="" alt="主图" class="news-item-image">
+    <div class="news-item-content">
+        <div class="news-item-title" onclick="showNewsContent(&#39;19&#39;)">AXAXAX</div>
+        <div class="news-item-description">AXAXAXAXwdwa</div>
+    </div>
+</div>
+</body>
+
+</html>
+
