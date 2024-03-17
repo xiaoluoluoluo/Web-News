@@ -16,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="thymeleaf" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,6 +45,9 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectId" id="2aCs3L2TZtKjathJeOXinMS8Myg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -198,6 +201,7 @@
       <workItem from="1710403808594" duration="6230000" />
       <workItem from="1710504477595" duration="1141000" />
       <workItem from="1710651535726" duration="2041000" />
+      <workItem from="1710657878714" duration="2102000" />
     </task>
     <servers />
   </component>
