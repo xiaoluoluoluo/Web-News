@@ -11,7 +11,7 @@ import java.util.List;
 
 
 public interface NewsService {
-    Result<String> addNews(NewsDto newsDto);
+    Result<String> addNews(NewsDto newsDto) throws InterruptedException;
 
     Result<String> publish(Integer id);
 

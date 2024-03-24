@@ -17,7 +17,7 @@ public class QuartzConfig {
     }
     @Bean
     public Trigger trigger(){
-        String express = "0/2 * * * * ? *";
+        String express = "0 0 0 * * ? *";
         return TriggerBuilder.newTrigger()
                 .withIdentity("trigger1","group1")
                 .forJob(jobDetail())

@@ -12,6 +12,8 @@ import com.example.entity.News;
 import com.example.entity.Result;
 import com.example.mapper.NewsMapper;
 import com.example.service.NewsService;
+import com.example.utils.RedissonUtils;
+import org.redisson.api.RLock;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 @Service
@@ -32,6 +35,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public Result<String> addNews(NewsDto newsDto) {
+
         News news=new News();
         BeanUtils.copyProperties(newsDto,news);
         news.setStatus(NewsConstant.UN_PUBLISH);
@@ -40,8 +44,20 @@ public class NewsServiceImpl implements NewsService {
             newsMapper.insert(news);
             return Result.success("提交成功");
         }else{
-            newsMapper.updateById(news);
-            return Result.success("修改成功");
+            RLock lock = RedissonUtils.getLock("update:" + newsDto.getId());
+            try {
+                if(lock.tryLock(20, TimeUnit.SECONDS)){
+                    newsMapper.updateById(news);
+                    return Result.success("修改成功");
+                }else{
+                    return Result.error("正在被修改");
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }finally {
+                lock.unlock();
+            }
+
         }
     }
     @Override
